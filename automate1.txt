@@ -1,0 +1,12 @@
+automate(1) Hello{
+	etat: [alice,bob,eva] ;
+	init: alice;
+	final:[bob];
+	transition:[
+        (alice, 'a', alice, (->, 'a')),
+		(alice, 'b', bob, ('a',->)),
+		(eva ,'b', bob, ('a',->)),
+		(alice ,'c', eva, ()), 
+		(eva ,'c', eva, ()), 
+		(bob ,'b', bob, ('a',->))];
+};;

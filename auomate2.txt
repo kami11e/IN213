@@ -1,0 +1,11 @@
+automate(2) myAuto {
+	etat:[one,two, three];
+	init:one;
+    final:[three];
+	transition:[
+        (one, 'a', one, (->,'a'), ()), 
+		(one, 'b', two, ('a', ->), (->, 'b')),
+		(two, 'b', two, ('a', ->), (->,'b')),
+		(two, 'c', three, (), ('b', -> )), 
+		(three, 'c', three, (), ('b', ->))];
+};;

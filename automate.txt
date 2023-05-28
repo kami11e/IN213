@@ -1,0 +1,16 @@
+automate(0) miao {
+	etat:[1a,2b, 3c,Init];
+	init:Init;
+	final:[1a,2b, 3c];
+	transition:[
+        (Init,'1', 1a),
+        (Init,'2', 2b),
+        (Init,'3', 3c),
+		(1a,'2', 2b),
+        (1a,'3', 3c),
+        (2b,'1', 1a),
+        (2b,'3', 3c),
+		(3c,'1', 1a),
+        (3c,'2', 2b)
+    ];
+};;
